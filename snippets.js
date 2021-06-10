@@ -1,3 +1,6 @@
+Under construction =D
+
+
 
 /*1. all
 
@@ -59,10 +62,11 @@ const attempt = (fn, ...args) => {
     return e instanceof Error ? e : new Error(e);
   }
 };
-var elements = attempt(function(selector) {
+
+/*var elements = attempt(function(selector) {
   return document.querySelectorAll(selector);
 }, '>_>');
-if (elements instanceof Error) elements = []; // elements = []
+if (elements instanceof Error) elements = []; // elements = []*/
 
 
 /*7. average
@@ -360,14 +364,14 @@ This snippet returns the first key that satisfies a given function.*/
 
 const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));
 
-findKey(
+/*findKey(
   {
     barney: { age: 36, active: true },
     fred: { age: 40, active: false },
     pebbles: { age: 1, active: true }
   },
   o => o['active']
-); // 'barney'
+); // 'barney'*/
 
 
 /*38. findLast
@@ -431,81 +435,82 @@ const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
 
 /*44. Get Days Between Dates
 
-This snippet can be used to find the difference in days between two dates.
+This snippet can be used to find the difference in days between two dates.*/
 
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
   (dateFinal - dateInitial) / (1000 * 3600 * 24);
   
-getDaysDiffBetweenDates(new Date('2019-01-13'), new Date('2019-01-15')); // 2
+//getDaysDiffBetweenDates(new Date('2019-01-13'), new Date('2019-01-15')); // 2
 
-45. getStyle
+/*45. getStyle
 
-This snippet can be used to get the value of a CSS rule for a particular element.
+This snippet can be used to get the value of a CSS rule for a particular element.*/
 
 const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
 
-getStyle(document.querySelector('p'), 'font-size'); // '16px'
+//getStyle(document.querySelector('p'), 'font-size'); // '16px'
 
-46. getType
+/*46. getType
 
-This snippet can be used to get the type of a value.
+This snippet can be used to get the type of a value.*/
 
 const getType = v =>
   v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
   
-getType(new Set([1, 2, 3])); // 'set'
+//getType(new Set([1, 2, 3])); // 'set'
 
-47. hasClass
+/*47. hasClass
 
-This snippet checks whether an element has a particular class.
+This snippet checks whether an element has a particular class.*/
 
 const hasClass = (el, className) => el.classList.contains(className);
-hasClass(document.querySelector('p.special'), 'special'); // true
 
-48. head
+//hasClass(document.querySelector('p.special'), 'special'); // true
 
-This snippet returns the head of a list.
+/*48. head
+
+This snippet returns the head of a list.*/
 
 const head = arr => arr[0];
 
-head([1, 2, 3]); // 1
+//head([1, 2, 3]); // 1
 
-49. hide
+/*49. hide
 
-This snippet can be used to hide all elements specified.
+This snippet can be used to hide all elements specified.*/
 
 const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 
-hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
+//hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
 
-50. httpsRedirect
+/*50. httpsRedirect
 
-This snippet can be used to redirect from HTTP to HTTPS in a particular domain.
+This snippet can be used to redirect from HTTP to HTTPS in a particular domain.*/
 
 
 const httpsRedirect = () => {
   if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
 };
 
-httpsRedirect(); // If you are on http://mydomain.com, you are redirected to https://mydomain.com
+//httpsRedirect(); // If you are on http://mydomain.com, you are redirected to https://mydomain.com
 
-51. indexOfAll
+/*51. indexOfAll
 
-This snippet can be used to get all indexes of a value in an array, which returns an empty array, in case this value is not included in it.
+This snippet can be used to get all indexes of a value in an array, which returns an empty array, in case this value is not included in it.*/
 
 const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
 
-indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]
-indexOfAll([1, 2, 3], 4); // []
+//indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]
+//indexOfAll([1, 2, 3], 4); // []
 
-52. initial
+/*52. initial
 
-This snippet returns all elements of an array except the last one.
+This snippet returns all elements of an array except the last one.*/
 
 const initial = arr => arr.slice(0, -1);
 
-initial([1, 2, 3]); // [1,2]const initial = arr => arr.slice(0, -1);
-initial([1, 2, 3]); // [1,2]
+//initial([1, 2, 3]); // [1,2]const initial = arr => arr.slice(0, -1);
+//initial([1, 2, 3]); // [1,2]
 
 
 53. insertAfter
